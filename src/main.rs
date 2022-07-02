@@ -63,7 +63,7 @@ fn main() -> penrose::Result<()> {
         .top_bar(true)
         .layouts(vec![side_stack_layout])
         .floating_classes(floating_classes)
-        .focused_border(colors::GOKU)?
+        .focused_border(colors::BLUE)?
         .build()
         .expect("Unable to build configuration");
 
@@ -82,7 +82,7 @@ fn main() -> penrose::Result<()> {
         draw,
         dimensions::HEIGHT,
         &style,
-        Color::try_from(colors::GOKU)?,
+        Color::try_from(colors::BLUE)?,
         empty_ws,
         config.workspaces().clone(),
     )?;
@@ -95,7 +95,7 @@ fn main() -> penrose::Result<()> {
     #[allow(unused_braces)]
     let key_bindings = gen_keybindings! {
         // Program launchers
-        "M-p" => run_external!({&application_config.mywm_launcher});
+        "M-d" => run_external!({&application_config.mywm_launcher});
         "M-Return" => run_external!({&application_config.mywm_terminal});
 
         // Exit Penrose (important to remember this one!)
@@ -107,7 +107,7 @@ fn main() -> penrose::Result<()> {
         "M-S-j" => run_internal!(drag_client, Forward);
         "M-S-k" => run_internal!(drag_client, Backward);
         "M-f" => run_internal!(toggle_client_fullscreen, &Selector::Focused);
-        "M-c" => run_internal!(kill_client);
+        "M-q" => run_internal!(kill_client);
 
         // workspace management
         "M-Tab" => run_internal!(toggle_workspace);
