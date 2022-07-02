@@ -1,8 +1,8 @@
-# mywm
-mywm is a simple tiling window manager built using the rust crate: [penrose](https://github.com/sminez/penrose).
+# Penrose
+Penrose is a simple tiling window manager built using the rust crate: [penrose](https://github.com/sminez/penrose).
 
 ## Build
-Mywm can be build using with cargo using the command:
+Penrose can be build using with cargo using the command:
 ```bash
 cargo build --release
 ```
